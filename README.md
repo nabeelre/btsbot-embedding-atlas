@@ -12,8 +12,8 @@ site to GitHub Pages.
 
 <p align="center">
   <img
-    src="https://github.com/nabeelre/btsbot-embedding-atlas/src/screenshot.png"
+    src="https://github.com/nabeelre/btsbot-embedding-atlas/blob/8d3ca3ee5eef58efff0fe028a5c9f3707f91def1/src/screenshot.png"
     alt="BTSbot Embedding Atlas"
-    width="250px"
+    width="1024px"
   />
 </p>
