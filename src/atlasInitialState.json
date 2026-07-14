@@ -1,0 +1,1123 @@
+{
+  "version": "0.22.0",
+  "charts": {
+    "1": {
+      "type": "embedding",
+      "title": "Embedding",
+      "data": {
+        "x": "umap_emb_1",
+        "y": "umap_emb_2",
+        "category": "query_set"
+      }
+    },
+    "2": {
+      "type": "count-plot",
+      "title": "query_set",
+      "data": {
+        "field": "query_set"
+      }
+    },
+    "3": {
+      "title": "n_prev_dets",
+      "layers": [
+        {
+          "mark": "bar",
+          "style": {
+            "fillColor": "$markColorFade"
+          },
+          "encoding": {
+            "x": {
+              "field": "n_prev_dets"
+            },
+            "y": {
+              "aggregate": "count"
+            }
+          }
+        },
+        {
+          "mark": "bar",
+          "filter": "$filter",
+          "encoding": {
+            "x": {
+              "field": "n_prev_dets"
+            },
+            "y": {
+              "aggregate": "count"
+            }
+          }
+        }
+      ],
+      "selection": {
+        "brush": {
+          "encoding": "x"
+        }
+      },
+      "widgets": [
+        {
+          "type": "scale.type",
+          "channel": "x"
+        },
+        {
+          "type": "encoding.normalize",
+          "attribute": "y",
+          "layer": [
+            0,
+            1
+          ],
+          "options": [
+            "x"
+          ]
+        }
+      ]
+    },
+    "4": {
+      "title": "magpsf",
+      "layers": [
+        {
+          "mark": "bar",
+          "style": {
+            "fillColor": "$markColorFade"
+          },
+          "encoding": {
+            "x": {
+              "field": "magpsf"
+            },
+            "y": {
+              "aggregate": "count"
+            }
+          }
+        },
+        {
+          "mark": "bar",
+          "filter": "$filter",
+          "encoding": {
+            "x": {
+              "field": "magpsf"
+            },
+            "y": {
+              "aggregate": "count"
+            }
+          }
+        }
+      ],
+      "selection": {
+        "brush": {
+          "encoding": "x"
+        }
+      },
+      "widgets": [
+        {
+          "type": "scale.type",
+          "channel": "x"
+        },
+        {
+          "type": "encoding.normalize",
+          "attribute": "y",
+          "layer": [
+            0,
+            1
+          ],
+          "options": [
+            "x"
+          ]
+        }
+      ]
+    },
+    "5": {
+      "title": "days_since_peak",
+      "layers": [
+        {
+          "mark": "bar",
+          "style": {
+            "fillColor": "$markColorFade"
+          },
+          "encoding": {
+            "x": {
+              "field": "days_since_peak"
+            },
+            "y": {
+              "aggregate": "count"
+            }
+          }
+        },
+        {
+          "mark": "bar",
+          "filter": "$filter",
+          "encoding": {
+            "x": {
+              "field": "days_since_peak"
+            },
+            "y": {
+              "aggregate": "count"
+            }
+          }
+        }
+      ],
+      "selection": {
+        "brush": {
+          "encoding": "x"
+        }
+      },
+      "widgets": [
+        {
+          "type": "scale.type",
+          "channel": "x"
+        },
+        {
+          "type": "encoding.normalize",
+          "attribute": "y",
+          "layer": [
+            0,
+            1
+          ],
+          "options": [
+            "x"
+          ]
+        }
+      ]
+    },
+    "6": {
+      "title": "days_to_peak",
+      "layers": [
+        {
+          "mark": "bar",
+          "style": {
+            "fillColor": "$markColorFade"
+          },
+          "encoding": {
+            "x": {
+              "field": "days_to_peak"
+            },
+            "y": {
+              "aggregate": "count"
+            }
+          }
+        },
+        {
+          "mark": "bar",
+          "filter": "$filter",
+          "encoding": {
+            "x": {
+              "field": "days_to_peak"
+            },
+            "y": {
+              "aggregate": "count"
+            }
+          }
+        }
+      ],
+      "selection": {
+        "brush": {
+          "encoding": "x"
+        }
+      },
+      "widgets": [
+        {
+          "type": "scale.type",
+          "channel": "x"
+        },
+        {
+          "type": "encoding.normalize",
+          "attribute": "y",
+          "layer": [
+            0,
+            1
+          ],
+          "options": [
+            "x"
+          ]
+        }
+      ]
+    },
+    "7": {
+      "title": "peakmag_so_far",
+      "layers": [
+        {
+          "mark": "bar",
+          "style": {
+            "fillColor": "$markColorFade"
+          },
+          "encoding": {
+            "x": {
+              "field": "peakmag_so_far"
+            },
+            "y": {
+              "aggregate": "count"
+            }
+          }
+        },
+        {
+          "mark": "bar",
+          "filter": "$filter",
+          "encoding": {
+            "x": {
+              "field": "peakmag_so_far"
+            },
+            "y": {
+              "aggregate": "count"
+            }
+          }
+        }
+      ],
+      "selection": {
+        "brush": {
+          "encoding": "x"
+        }
+      },
+      "widgets": [
+        {
+          "type": "scale.type",
+          "channel": "x"
+        },
+        {
+          "type": "encoding.normalize",
+          "attribute": "y",
+          "layer": [
+            0,
+            1
+          ],
+          "options": [
+            "x"
+          ]
+        }
+      ]
+    },
+    "8": {
+      "title": "maxmag_so_far",
+      "layers": [
+        {
+          "mark": "bar",
+          "style": {
+            "fillColor": "$markColorFade"
+          },
+          "encoding": {
+            "x": {
+              "field": "maxmag_so_far"
+            },
+            "y": {
+              "aggregate": "count"
+            }
+          }
+        },
+        {
+          "mark": "bar",
+          "filter": "$filter",
+          "encoding": {
+            "x": {
+              "field": "maxmag_so_far"
+            },
+            "y": {
+              "aggregate": "count"
+            }
+          }
+        }
+      ],
+      "selection": {
+        "brush": {
+          "encoding": "x"
+        }
+      },
+      "widgets": [
+        {
+          "type": "scale.type",
+          "channel": "x"
+        },
+        {
+          "type": "encoding.normalize",
+          "attribute": "y",
+          "layer": [
+            0,
+            1
+          ],
+          "options": [
+            "x"
+          ]
+        }
+      ]
+    },
+    "9": {
+      "title": "sigmapsf",
+      "layers": [
+        {
+          "mark": "bar",
+          "style": {
+            "fillColor": "$markColorFade"
+          },
+          "encoding": {
+            "x": {
+              "field": "sigmapsf"
+            },
+            "y": {
+              "aggregate": "count"
+            }
+          }
+        },
+        {
+          "mark": "bar",
+          "filter": "$filter",
+          "encoding": {
+            "x": {
+              "field": "sigmapsf"
+            },
+            "y": {
+              "aggregate": "count"
+            }
+          }
+        }
+      ],
+      "selection": {
+        "brush": {
+          "encoding": "x"
+        }
+      },
+      "widgets": [
+        {
+          "type": "scale.type",
+          "channel": "x"
+        },
+        {
+          "type": "encoding.normalize",
+          "attribute": "y",
+          "layer": [
+            0,
+            1
+          ],
+          "options": [
+            "x"
+          ]
+        }
+      ]
+    },
+    "10": {
+      "title": "age",
+      "layers": [
+        {
+          "mark": "bar",
+          "style": {
+            "fillColor": "$markColorFade"
+          },
+          "encoding": {
+            "x": {
+              "field": "age"
+            },
+            "y": {
+              "aggregate": "count"
+            }
+          }
+        },
+        {
+          "mark": "bar",
+          "filter": "$filter",
+          "encoding": {
+            "x": {
+              "field": "age"
+            },
+            "y": {
+              "aggregate": "count"
+            }
+          }
+        }
+      ],
+      "selection": {
+        "brush": {
+          "encoding": "x"
+        }
+      },
+      "widgets": [
+        {
+          "type": "scale.type",
+          "channel": "x"
+        },
+        {
+          "type": "encoding.normalize",
+          "attribute": "y",
+          "layer": [
+            0,
+            1
+          ],
+          "options": [
+            "x"
+          ]
+        }
+      ]
+    },
+    "11": {
+      "title": "real_bogus",
+      "layers": [
+        {
+          "mark": "bar",
+          "style": {
+            "fillColor": "$markColorFade"
+          },
+          "encoding": {
+            "x": {
+              "field": "real_bogus"
+            },
+            "y": {
+              "aggregate": "count"
+            }
+          }
+        },
+        {
+          "mark": "bar",
+          "filter": "$filter",
+          "encoding": {
+            "x": {
+              "field": "real_bogus"
+            },
+            "y": {
+              "aggregate": "count"
+            }
+          }
+        }
+      ],
+      "selection": {
+        "brush": {
+          "encoding": "x"
+        }
+      },
+      "widgets": [
+        {
+          "type": "scale.type",
+          "channel": "x"
+        },
+        {
+          "type": "encoding.normalize",
+          "attribute": "y",
+          "layer": [
+            0,
+            1
+          ],
+          "options": [
+            "x"
+          ]
+        }
+      ]
+    },
+    "12": {
+      "type": "count-plot",
+      "title": "filter_id",
+      "data": {
+        "field": "filter_id"
+      }
+    },
+    "13": {
+      "title": "peakmag",
+      "layers": [
+        {
+          "mark": "bar",
+          "style": {
+            "fillColor": "$markColorFade"
+          },
+          "encoding": {
+            "x": {
+              "field": "peakmag"
+            },
+            "y": {
+              "aggregate": "count"
+            }
+          }
+        },
+        {
+          "mark": "bar",
+          "filter": "$filter",
+          "encoding": {
+            "x": {
+              "field": "peakmag"
+            },
+            "y": {
+              "aggregate": "count"
+            }
+          }
+        }
+      ],
+      "selection": {
+        "brush": {
+          "encoding": "x"
+        }
+      },
+      "widgets": [
+        {
+          "type": "scale.type",
+          "channel": "x"
+        },
+        {
+          "type": "encoding.normalize",
+          "attribute": "y",
+          "layer": [
+            0,
+            1
+          ],
+          "options": [
+            "x"
+          ]
+        }
+      ]
+    },
+    "14": {
+      "title": "maxmag",
+      "layers": [
+        {
+          "mark": "bar",
+          "style": {
+            "fillColor": "$markColorFade"
+          },
+          "encoding": {
+            "x": {
+              "field": "maxmag"
+            },
+            "y": {
+              "aggregate": "count"
+            }
+          }
+        },
+        {
+          "mark": "bar",
+          "filter": "$filter",
+          "encoding": {
+            "x": {
+              "field": "maxmag"
+            },
+            "y": {
+              "aggregate": "count"
+            }
+          }
+        }
+      ],
+      "selection": {
+        "brush": {
+          "encoding": "x"
+        }
+      },
+      "widgets": [
+        {
+          "type": "scale.type",
+          "channel": "x"
+        },
+        {
+          "type": "encoding.normalize",
+          "attribute": "y",
+          "layer": [
+            0,
+            1
+          ],
+          "options": [
+            "x"
+          ]
+        }
+      ]
+    },
+    "15": {
+      "title": "hosted_score",
+      "layers": [
+        {
+          "mark": "bar",
+          "style": {
+            "fillColor": "$markColorFade"
+          },
+          "encoding": {
+            "x": {
+              "field": "hosted_score"
+            },
+            "y": {
+              "aggregate": "count"
+            }
+          }
+        },
+        {
+          "mark": "bar",
+          "filter": "$filter",
+          "encoding": {
+            "x": {
+              "field": "hosted_score"
+            },
+            "y": {
+              "aggregate": "count"
+            }
+          }
+        }
+      ],
+      "selection": {
+        "brush": {
+          "encoding": "x"
+        }
+      },
+      "widgets": [
+        {
+          "type": "scale.type",
+          "channel": "x"
+        },
+        {
+          "type": "encoding.normalize",
+          "attribute": "y",
+          "layer": [
+            0,
+            1
+          ],
+          "options": [
+            "x"
+          ]
+        }
+      ]
+    },
+    "16": {
+      "title": "nuclear_score",
+      "layers": [
+        {
+          "mark": "bar",
+          "style": {
+            "fillColor": "$markColorFade"
+          },
+          "encoding": {
+            "x": {
+              "field": "nuclear_score"
+            },
+            "y": {
+              "aggregate": "count"
+            }
+          }
+        },
+        {
+          "mark": "bar",
+          "filter": "$filter",
+          "encoding": {
+            "x": {
+              "field": "nuclear_score"
+            },
+            "y": {
+              "aggregate": "count"
+            }
+          }
+        }
+      ],
+      "selection": {
+        "brush": {
+          "encoding": "x"
+        }
+      },
+      "widgets": [
+        {
+          "type": "scale.type",
+          "channel": "x"
+        },
+        {
+          "type": "encoding.normalize",
+          "attribute": "y",
+          "layer": [
+            0,
+            1
+          ],
+          "options": [
+            "x"
+          ]
+        }
+      ]
+    },
+    "17": {
+      "title": "variable_score",
+      "layers": [
+        {
+          "mark": "bar",
+          "style": {
+            "fillColor": "$markColorFade"
+          },
+          "encoding": {
+            "x": {
+              "field": "variable_score"
+            },
+            "y": {
+              "aggregate": "count"
+            }
+          }
+        },
+        {
+          "mark": "bar",
+          "filter": "$filter",
+          "encoding": {
+            "x": {
+              "field": "variable_score"
+            },
+            "y": {
+              "aggregate": "count"
+            }
+          }
+        }
+      ],
+      "selection": {
+        "brush": {
+          "encoding": "x"
+        }
+      },
+      "widgets": [
+        {
+          "type": "scale.type",
+          "channel": "x"
+        },
+        {
+          "type": "encoding.normalize",
+          "attribute": "y",
+          "layer": [
+            0,
+            1
+          ],
+          "options": [
+            "x"
+          ]
+        }
+      ]
+    },
+    "18": {
+      "title": "orphan_score",
+      "layers": [
+        {
+          "mark": "bar",
+          "style": {
+            "fillColor": "$markColorFade"
+          },
+          "encoding": {
+            "x": {
+              "field": "orphan_score"
+            },
+            "y": {
+              "aggregate": "count"
+            }
+          }
+        },
+        {
+          "mark": "bar",
+          "filter": "$filter",
+          "encoding": {
+            "x": {
+              "field": "orphan_score"
+            },
+            "y": {
+              "aggregate": "count"
+            }
+          }
+        }
+      ],
+      "selection": {
+        "brush": {
+          "encoding": "x"
+        }
+      },
+      "widgets": [
+        {
+          "type": "scale.type",
+          "channel": "x"
+        },
+        {
+          "type": "encoding.normalize",
+          "attribute": "y",
+          "layer": [
+            0,
+            1
+          ],
+          "options": [
+            "x"
+          ]
+        }
+      ]
+    },
+    "19": {
+      "title": "sgscore1",
+      "layers": [
+        {
+          "mark": "bar",
+          "style": {
+            "fillColor": "$markColorFade"
+          },
+          "encoding": {
+            "x": {
+              "field": "sgscore1"
+            },
+            "y": {
+              "aggregate": "count"
+            }
+          }
+        },
+        {
+          "mark": "bar",
+          "filter": "$filter",
+          "encoding": {
+            "x": {
+              "field": "sgscore1"
+            },
+            "y": {
+              "aggregate": "count"
+            }
+          }
+        }
+      ],
+      "selection": {
+        "brush": {
+          "encoding": "x"
+        }
+      },
+      "widgets": [
+        {
+          "type": "scale.type",
+          "channel": "x"
+        },
+        {
+          "type": "encoding.normalize",
+          "attribute": "y",
+          "layer": [
+            0,
+            1
+          ],
+          "options": [
+            "x"
+          ]
+        }
+      ]
+    },
+    "20": {
+      "title": "distpsnr1",
+      "layers": [
+        {
+          "mark": "bar",
+          "style": {
+            "fillColor": "$markColorFade"
+          },
+          "encoding": {
+            "x": {
+              "field": "distpsnr1"
+            },
+            "y": {
+              "aggregate": "count"
+            }
+          }
+        },
+        {
+          "mark": "bar",
+          "filter": "$filter",
+          "encoding": {
+            "x": {
+              "field": "distpsnr1"
+            },
+            "y": {
+              "aggregate": "count"
+            }
+          }
+        }
+      ],
+      "selection": {
+        "brush": {
+          "encoding": "x"
+        }
+      },
+      "widgets": [
+        {
+          "type": "scale.type",
+          "channel": "x"
+        },
+        {
+          "type": "encoding.normalize",
+          "attribute": "y",
+          "layer": [
+            0,
+            1
+          ],
+          "options": [
+            "x"
+          ]
+        }
+      ]
+    },
+    "21": {
+      "title": "ra",
+      "layers": [
+        {
+          "mark": "bar",
+          "style": {
+            "fillColor": "$markColorFade"
+          },
+          "encoding": {
+            "x": {
+              "field": "ra"
+            },
+            "y": {
+              "aggregate": "count"
+            }
+          }
+        },
+        {
+          "mark": "bar",
+          "filter": "$filter",
+          "encoding": {
+            "x": {
+              "field": "ra"
+            },
+            "y": {
+              "aggregate": "count"
+            }
+          }
+        }
+      ],
+      "selection": {
+        "brush": {
+          "encoding": "x"
+        }
+      },
+      "widgets": [
+        {
+          "type": "scale.type",
+          "channel": "x"
+        },
+        {
+          "type": "encoding.normalize",
+          "attribute": "y",
+          "layer": [
+            0,
+            1
+          ],
+          "options": [
+            "x"
+          ]
+        }
+      ]
+    },
+    "22": {
+      "title": "dec",
+      "layers": [
+        {
+          "mark": "bar",
+          "style": {
+            "fillColor": "$markColorFade"
+          },
+          "encoding": {
+            "x": {
+              "field": "dec"
+            },
+            "y": {
+              "aggregate": "count"
+            }
+          }
+        },
+        {
+          "mark": "bar",
+          "filter": "$filter",
+          "encoding": {
+            "x": {
+              "field": "dec"
+            },
+            "y": {
+              "aggregate": "count"
+            }
+          }
+        }
+      ],
+      "selection": {
+        "brush": {
+          "encoding": "x"
+        }
+      },
+      "widgets": [
+        {
+          "type": "scale.type",
+          "channel": "x"
+        },
+        {
+          "type": "encoding.normalize",
+          "attribute": "y",
+          "layer": [
+            0,
+            1
+          ],
+          "options": [
+            "x"
+          ]
+        }
+      ]
+    },
+    "23": {
+      "title": "seeing",
+      "layers": [
+        {
+          "mark": "bar",
+          "style": {
+            "fillColor": "$markColorFade"
+          },
+          "encoding": {
+            "x": {
+              "field": "seeing"
+            },
+            "y": {
+              "aggregate": "count"
+            }
+          }
+        },
+        {
+          "mark": "bar",
+          "filter": "$filter",
+          "encoding": {
+            "x": {
+              "field": "seeing"
+            },
+            "y": {
+              "aggregate": "count"
+            }
+          }
+        }
+      ],
+      "selection": {
+        "brush": {
+          "encoding": "x"
+        }
+      },
+      "widgets": [
+        {
+          "type": "scale.type",
+          "channel": "x"
+        },
+        {
+          "type": "encoding.normalize",
+          "attribute": "y",
+          "layer": [
+            0,
+            1
+          ],
+          "options": [
+            "x"
+          ]
+        }
+      ]
+    }
+  },
+  "layouts": {
+    "1": {
+      "type": "list",
+      "name": "Default",
+      "chartIds": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19",
+        "20",
+        "21",
+        "22",
+        "23"
+      ]
+    }
+  },
+  "layoutOrder": [
+    "1"
+  ],
+  "currentLayout": "1"
+}

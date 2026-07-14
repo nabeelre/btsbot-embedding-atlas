@@ -1,0 +1,363 @@
+/* BTSbot Embedding Atlas — astronomy theme ported from nabeelr.com */
+
+:root {
+    --nebulae-purple: #9D8FEF;
+    --star-blue: #5CA4F5;
+    --cosmic-indigo: #6A5FE0;
+    --nova-pink: #E39BC4;
+    --dark-space: #12131F;
+    --space-gray: #16213E;
+    --text-primary: #EDEEF4;
+    --text-secondary: #9BA0B0;
+    --background: #0A0C13;
+    --background-alt: #10131D;
+    --background-card: rgba(23, 26, 40, 0.72);
+    --border-color: rgba(148, 155, 190, 0.14);
+    --border-strong: rgba(157, 143, 239, 0.35);
+    --max-width: 1610px;
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+    --font-display: 'Space Grotesk', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --font-mono: "SFMono-Regular", "JetBrains Mono", Consolas, "Liberation Mono", Menlo, monospace;
+
+    --gradient-primary: linear-gradient(135deg, var(--nebulae-purple) 0%, var(--star-blue) 100%);
+    --gradient-text: linear-gradient(100deg, #B9AEFF 0%, #7DB5F8 55%, #E39BC4 115%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background-color: var(--background);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+::selection {
+    background: rgba(157, 143, 239, 0.35);
+    color: #fff;
+}
+
+/* Ambient background: static nebula glows + fine starfield (no JS, no animation) */
+.sky {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+        radial-gradient(ellipse 55% 42% at 18% -8%, rgba(106, 95, 224, 0.16), transparent 70%),
+        radial-gradient(ellipse 48% 38% at 85% 4%, rgba(92, 164, 245, 0.10), transparent 70%),
+        radial-gradient(ellipse 60% 50% at 55% 108%, rgba(227, 155, 196, 0.05), transparent 70%),
+        var(--background);
+}
+
+.sky::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        radial-gradient(1px 1px at 22px 34px, rgba(255, 255, 255, 0.55), transparent 100%),
+        radial-gradient(1px 1px at 187px 122px, rgba(255, 255, 255, 0.4), transparent 100%),
+        radial-gradient(1.5px 1.5px at 331px 61px, rgba(185, 174, 255, 0.5), transparent 100%),
+        radial-gradient(1px 1px at 97px 233px, rgba(255, 255, 255, 0.35), transparent 100%),
+        radial-gradient(1px 1px at 421px 187px, rgba(255, 255, 255, 0.5), transparent 100%),
+        radial-gradient(1.5px 1.5px at 273px 296px, rgba(125, 181, 248, 0.45), transparent 100%),
+        radial-gradient(1px 1px at 141px 405px, rgba(255, 255, 255, 0.4), transparent 100%),
+        radial-gradient(1px 1px at 389px 358px, rgba(255, 255, 255, 0.3), transparent 100%),
+        radial-gradient(1px 1px at 471px 449px, rgba(227, 155, 196, 0.4), transparent 100%),
+        radial-gradient(1px 1px at 51px 489px, rgba(255, 255, 255, 0.45), transparent 100%);
+    background-size: 520px 520px;
+    background-repeat: repeat;
+    opacity: 0.5;
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.25) 85%);
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.25) 85%);
+}
+
+/* Page layout */
+h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4.5vw, 2.9rem);
+    font-weight: 700;
+    line-height: 1.12;
+    letter-spacing: -0.025em;
+    margin-bottom: var(--spacing-sm);
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.atlas-page {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.atlas-intro h1 {
+    margin-bottom: var(--spacing-xs);
+}
+
+.atlas-lead {
+    font-size: 1.125rem;
+    line-height: 1.75;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.atlas-tips {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: 0;
+}
+
+.atlas-lead a {
+    color: var(--star-blue);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.atlas-lead a:hover {
+    color: var(--nebulae-purple);
+}
+
+.atlas-tips strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+code {
+    font-family: var(--font-mono);
+    font-size: 0.88em;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.08rem 0.4rem;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: var(--nebulae-purple);
+    white-space: nowrap;
+}
+
+/* Publication badges */
+.paper-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+}
+
+.paper-badge {
+    flex: 1 1 260px;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.7rem;
+    padding: 0.8rem 1.05rem;
+    border-radius: 14px;
+    border: 1px solid var(--border-color);
+    background: linear-gradient(160deg, rgba(30, 33, 52, 0.65), rgba(18, 20, 33, 0.65));
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.paper-badge:hover {
+    border-color: var(--border-strong);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(106, 95, 224, 0.18);
+}
+
+.paper-badge i {
+    color: var(--star-blue);
+    font-size: 1.05rem;
+    margin-top: 0.15rem;
+    transition: color 0.25s ease;
+}
+
+.paper-badge:hover i {
+    color: var(--nebulae-purple);
+}
+
+.paper-badge-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    min-width: 0;
+}
+
+.paper-badge-text strong {
+    font-family: var(--font-display);
+    font-size: 0.98rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--text-primary);
+}
+
+.paper-badge-desc {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: var(--text-secondary);
+}
+
+/* Atlas viewport — the interactive component fills this card */
+.atlas-view {
+    position: relative;
+    display: grid;
+    height: 73.8vh;
+    min-height: 504px;
+    max-height: 1080px;
+    width: 100%;
+    border-radius: 16px;
+    border: 1px solid var(--border-strong);
+    background:
+        radial-gradient(circle at top, rgba(148, 146, 255, 0.10), transparent 60%),
+        radial-gradient(circle at bottom, rgba(74, 144, 226, 0.07), transparent 45%),
+        #0C0E1A;
+    box-shadow: 0 24px 60px rgba(6, 7, 13, 0.6);
+    overflow: hidden;
+}
+
+/* The Embedding Atlas root (or the status placeholder) stretches to fill the card */
+.atlas-view > * {
+    min-width: 0;
+    min-height: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Loading / error placeholder */
+.atlas-status {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 0.85rem;
+    padding: var(--spacing-md);
+}
+
+.atlas-status-title {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.atlas-status-detail {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin: 0;
+    max-width: 52ch;
+}
+
+.atlas-status.is-error .atlas-status-title {
+    color: #ff8da1;
+}
+
+.atlas-status.is-error .atlas-status-detail {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: #ffb3c0;
+    word-break: break-word;
+}
+
+.atlas-status-hint {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin: 0;
+    max-width: 46ch;
+}
+
+.atlas-spinner {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 3px solid rgba(157, 143, 239, 0.25);
+    border-top-color: var(--nebulae-purple);
+    animation: atlas-spin 0.9s linear infinite;
+}
+
+@keyframes atlas-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Footer */
+.footer {
+    background: rgba(12, 14, 22, 0.6);
+    color: var(--text-secondary);
+    padding: var(--spacing-md);
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.92rem;
+}
+
+.footer .container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.footer p {
+    margin: 0;
+}
+
+/* Accessibility */
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--star-blue);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .atlas-page {
+        padding: var(--spacing-sm);
+        gap: var(--spacing-sm);
+    }
+
+    .atlas-view {
+        height: 66.6vh;
+        min-height: 414px;
+    }
+}
+
+@media (max-width: 520px) {
+    .atlas-lead {
+        font-size: 1.05rem;
+    }
+
+    code {
+        white-space: normal;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

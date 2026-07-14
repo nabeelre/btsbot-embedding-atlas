@@ -1,0 +1,26 @@
+{
+  "name": "btsbot-embedding-atlas",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Interactive Embedding Atlas of BTSbot's learned representation of ZTF alert data.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "build:gh": "BASE_PATH=/${npm_package_name}/ vite build"
+  },
+  "dependencies": {
+    "@uwdata/mosaic-core": "^0.21.1",
+    "@uwdata/mosaic-spec": "^0.21.1",
+    "@uwdata/mosaic-sql": "^0.21.1",
+    "@uwdata/vgplot": "^0.21.1",
+    "embedding-atlas": "^0.22.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^5.4.11"
+  }
+}
